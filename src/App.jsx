@@ -1,19 +1,8 @@
 import React, { useState } from 'react';
-// We removed Instagram from this import to avoid the Vite cache error
-import { 
-  Menu, 
-  X, 
-  CheckCircle2, 
-  ArrowUpRight, 
-  MonitorPlay, 
-  Film, 
-  Users, 
-  Smartphone, 
-  Clapperboard 
-} from 'lucide-react';
+import { Menu, X, CheckCircle2, ArrowUpRight, MonitorPlay, Film, Users, Smartphone, Clapperboard, Mail } from 'lucide-react';
 
-// Custom Instagram Icon to bypass the module export error
-const InstagramIcon = ({ className }) => (
+// Custom SVG Instagram Icon
+const Instagram = ({ className }) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
     width="24" 
@@ -26,9 +15,9 @@ const InstagramIcon = ({ className }) => (
     strokeLinejoin="round" 
     className={className}
   >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
   </svg>
 );
 
@@ -38,27 +27,27 @@ export default function App() {
   const portfolioData = [
     {
       id: 1,
-      category: "Cinematic",
-      title: "Slow Montage",
-      videoId: "6ePw8PGEwFo",
+      category: "Fitness Edits",
+      title: "High Energy Gym Promo",
+      youtubeId: "6ePw8PGEwFo", 
     },
     {
       id: 2,
       category: "Talking Head / Educational",
-      title: "Talking Head Edit",
-      videoId: "ivxc828k0qI",
+      title: "Finance Tips Reel",
+      youtubeId: "ivxc828k0qI",
     },
     {
       id: 3,
-      category: "Storytelling",
-      title: "Faceless Video",
-      videoId: "ArDnxvDYkGU",
+      category: "Lifestyle & Couple",
+      title: "Cinematic Bali Trip",
+      youtubeId: "ArDnxvDYkGU",
     },
     {
       id: 4,
       category: "Cinematic Montages",
-      title: "High Energy Montage",
-      videoId: "g7YP-9iAurA",
+      title: "Travel & Lifestyle",
+      youtubeId: "g7YP-9iAurA",
     },
   ];
 
@@ -85,7 +74,6 @@ export default function App() {
       <nav className="fixed w-full z-50 bg-[#0D0D0D]/80 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-center h-24">
-            {/* Reverted back to simple text logo */}
             <a href="#" className="text-xl font-bold tracking-tight">AK EDITS</a>
             
             {/* Desktop Nav */}
@@ -158,24 +146,23 @@ export default function App() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-16">Featured Work</h2>
             
-            {/* Adjusted to lg:grid-cols-4 since we have 4 vertical videos */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {portfolioData.map((item) => (
-                <div key={item.id} className="group flex flex-col">
-                  {/* YouTube Embed Container (Forced 9:16 Aspect Ratio) */}
-                  <div className="aspect-[9/16] bg-[#1A1A1A] rounded-2xl overflow-hidden mb-6 relative border border-white/5 shadow-lg">
-                    <iframe 
-                      src={`https://www.youtube.com/embed/${item.videoId}?rel=0`}
+                <div key={item.id} className="group">
+                  {/* YouTube Embed Container */}
+                  <div className="aspect-[9/16] bg-[#1A1A1A] rounded-2xl overflow-hidden mb-6 relative shadow-lg border border-white/5">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${item.youtubeId}?rel=0&modestbranding=1`}
                       title={item.title}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      className="w-full h-full absolute inset-0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
                   </div>
                   
                   <div>
                     <p className="text-sm text-gray-500 font-medium mb-2">{item.category}</p>
-                    <h3 className="text-lg font-medium text-white">{item.title}</h3>
+                    <h3 className="text-xl font-medium text-white transition-colors">{item.title}</h3>
                   </div>
                 </div>
               ))}
@@ -192,7 +179,7 @@ export default function App() {
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">About Me</h2>
                 <div className="space-y-6 text-lg md:text-xl text-gray-400 font-light leading-relaxed">
                   <p>
-                    Hi, I'm <span className="text-white font-medium">AK</span>, a freelance video editor focused on creating engaging short-form content.
+                    Hi, I'm <span className="text-white font-medium">Khushal</span>, a freelance video editor focused on creating engaging short-form content.
                   </p>
                   <p>
                     My goal is simple: Create videos that keep viewers watching while matching each creator's unique style.
@@ -248,22 +235,32 @@ export default function App() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">Let's Work Together</h2>
             <p className="text-xl text-gray-400 mb-12">
-              Ready to elevate your content? Drop me a message on Instagram.
+              Ready to elevate your content? Drop me a message on Instagram or send me an email.
             </p>
             
-            <a 
-              href="https://instagram.com/ak_editz_1610" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-black font-medium rounded-2xl hover:scale-[1.02] transition-transform duration-300 text-lg"
-            >
-              <InstagramIcon className="w-6 h-6" />
-              Send Message
-            </a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a 
+                href="https://instagram.com/ak_editz_1610" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-black font-medium rounded-2xl hover:scale-[1.02] transition-transform duration-300 text-lg w-full sm:w-auto"
+              >
+                <Instagram className="w-6 h-6" />
+                Instagram
+              </a>
+
+              <a 
+                href="mailto:akeditz1609@gmail.com" 
+                className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white/10 text-white font-medium rounded-2xl border border-white/10 hover:bg-white/20 transition-colors duration-300 text-lg w-full sm:w-auto"
+              >
+                <Mail className="w-6 h-6" />
+                Email Me
+              </a>
+            </div>
             
-            <div className="mt-8 flex items-center justify-center gap-2 text-gray-500 font-medium">
-              <span>@ak_editz_1610</span>
-              <ArrowUpRight className="w-4 h-4" />
+            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6 text-gray-500 font-medium">
+              <span className="flex items-center gap-2">@ak_editz_1610 <ArrowUpRight className="w-4 h-4" /></span>
+              <span className="flex items-center gap-2">akeditz1609@gmail.com <ArrowUpRight className="w-4 h-4" /></span>
             </div>
           </div>
         </section>
@@ -272,22 +269,30 @@ export default function App() {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/5">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Reverted back to simple text logo in footer */}
           <div className="text-xl font-bold tracking-tight">AK EDITS</div>
           
-          <div className="text-gray-500 text-sm">
-            © 2026 AK EDITS
+          <div className="text-gray-500 text-sm md:mr-12">
+            © {new Date().getFullYear()} AK EDITS
           </div>
           
-          <a 
-            href="https://instagram.com/ak_editz_1610" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-sm font-medium"
-          >
-            <InstagramIcon className="w-4 h-4" />
-            @ak_editz_1610
-          </a>
+          <div className="flex items-center gap-8">
+            <a 
+              href="mailto:akeditz1609@gmail.com" 
+              className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-sm font-medium"
+            >
+              <Mail className="w-4 h-4" />
+              Email
+            </a>
+            <a 
+              href="https://instagram.com/ak_editz_1610" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-gray-500 hover:text-white transition-colors text-sm font-medium"
+            >
+              <Instagram className="w-4 h-4" />
+              Instagram
+            </a>
+          </div>
         </div>
       </footer>
     </div>
