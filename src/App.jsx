@@ -28,27 +28,32 @@ export default function App() {
     {
       id: 1,
       category: "Fitness Edits",
-      title: "High Energy Gym Promo",
+      title: "Slow Cinmatic Pilates Edit",
       youtubeId: "6ePw8PGEwFo", 
     },
     {
       id: 2,
-      category: "Talking Head / Educational",
-      title: "Finance Tips Reel",
+      category: "Talking Head fitness guildance",
+      title: "fitness Tips Reel",
       youtubeId: "ivxc828k0qI",
     },
     {
       id: 3,
-      category: "Lifestyle & Couple",
-      title: "Cinematic Bali Trip",
+      category: "Faceless",
+      title: "Faceless Tutorial Edit",
       youtubeId: "ArDnxvDYkGU",
     },
     {
       id: 4,
       category: "Cinematic Montages",
-      title: "Travel & Lifestyle",
+      title: "Gym Cinematic Edit",
       youtubeId: "g7YP-9iAurA",
-    },
+    },{
+      id: 5,
+      category: "Promotional", // Change this to whatever you want
+      title: "Nykaa Product promotion ",  // Change this to whatever you want
+      youtubeId: "8g8xB0lKkUg",
+    }
   ];
 
   const services = [
@@ -179,7 +184,7 @@ export default function App() {
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">About Me</h2>
                 <div className="space-y-6 text-lg md:text-xl text-gray-400 font-light leading-relaxed">
                   <p>
-                    Hi, I'm <span className="text-white font-medium">Khushal</span>, a freelance video editor focused on creating engaging short-form content.
+                    Hi, I'm <span className="text-white font-medium">AK</span>, a freelance video editor focused on creating engaging short-form content.
                   </p>
                   <p>
                     My goal is simple: Create videos that keep viewers watching while matching each creator's unique style.
