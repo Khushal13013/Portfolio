@@ -27,32 +27,31 @@ export default function App() {
   const portfolioData = [
     {
       id: 1,
+      category: "Promotional", // Change this to whatever you want
+      title: "Nykaa Product promotion ",  // Change this to whatever you want
+      youtubeId: "8g8xB0lKkUg",
+    },{
+      id: 2,
       category: "Fitness Edits",
       title: "Slow Cinematic Pilates Edit",
       youtubeId: "6ePw8PGEwFo", 
     },
     {
-      id: 2,
+      id: 3,
       category: "Talking Head fitness guildance",
       title: "fitness Tips Reel",
       youtubeId: "ivxc828k0qI",
-    },
-    {
-      id: 3,
-      category: "Faceless",
-      title: "Faceless Tutorial Edit",
-      youtubeId: "ArDnxvDYkGU",
-    },
-    {
+    },{
       id: 4,
       category: "Cinematic Montages",
       title: "Gym Cinematic Edit",
       youtubeId: "g7YP-9iAurA",
-    },{
+    },
+    {
       id: 5,
-      category: "Promotional", // Change this to whatever you want
-      title: "Nykaa Product promotion ",  // Change this to whatever you want
-      youtubeId: "8g8xB0lKkUg",
+      category: "Faceless",
+      title: "Faceless Tutorial Edit",
+      youtubeId: "ArDnxvDYkGU",
     }
   ];
 
