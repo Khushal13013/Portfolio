@@ -28,7 +28,7 @@ export default function App() {
     {
       id: 1,
       category: "Fitness Edits",
-      title: "Slow Cinmatic Pilates Edit",
+      title: "Slow Cinematic Pilates Edit",
       youtubeId: "6ePw8PGEwFo", 
     },
     {
