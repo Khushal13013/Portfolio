@@ -27,32 +27,33 @@ export default function App() {
   const portfolioData = [
     {
       id: 1,
+      category: "Documentary Style",
+      title: "Documentary Style Editing",
+      youtubeId: "Na98zD516NU", 
+    },
+    {
+      id: 2,
       category: "Promotional", // Change this to whatever you want
       title: "Nykaa Product promotion ",  // Change this to whatever you want
       youtubeId: "8g8xB0lKkUg",
     },{
-      id: 2,
-      category: "Fitness Edits",
-      title: "Slow Cinematic Pilates Edit",
-      youtubeId: "6ePw8PGEwFo", 
-    },
-    {
       id: 3,
-      category: "Talking Head fitness guildance",
-      title: "fitness Tips Reel",
-      youtubeId: "ivxc828k0qI",
-    },{
-      id: 4,
       category: "Cinematic Montages",
       title: "Gym Cinematic Edit",
       youtubeId: "g7YP-9iAurA",
     },
     {
-      id: 5,
-      category: "Faceless",
-      title: "Faceless Tutorial Edit",
-      youtubeId: "ArDnxvDYkGU",
+      id: 4,
+      category: "Documentary style",
+      title: "Documentary style Editing",
+      youtubeId: "g5R8NLVnpiI",
     }
+    // {
+    //   id: 5,
+    //   category: "",
+    //   title: "",
+    //   youtubeId: "",
+    // }
   ];
 
   const services = [
@@ -183,7 +184,7 @@ export default function App() {
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">About Me</h2>
                 <div className="space-y-6 text-lg md:text-xl text-gray-400 font-light leading-relaxed">
                   <p>
-                    Hi, I'm <span className="text-white font-medium">AK</span>, a freelance video editor focused on creating engaging short-form content.
+                    Hi, I'm <span className="text-white font-medium">Khushal</span>, a freelance video editor focused on creating engaging short-form content.
                   </p>
                   <p>
                     My goal is simple: Create videos that keep viewers watching while matching each creator's unique style.
@@ -250,7 +251,7 @@ export default function App() {
                 className="inline-flex items-center justify-center gap-3 px-8 py-5 bg-white text-black font-medium rounded-2xl hover:scale-[1.02] transition-transform duration-300 text-lg w-full sm:w-auto"
               >
                 <Instagram className="w-6 h-6" />
-                Instagram
+                 let's Start Working
               </a>
 
               <a 
