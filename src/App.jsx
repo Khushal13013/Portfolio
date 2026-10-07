@@ -44,9 +44,9 @@ export default function App() {
     },
     {
       id: 4,
-      category: "Documentary style",
-      title: "Documentary style Editing",
-      youtubeId: "g5R8NLVnpiI",
+      category: "Talikng Head",
+      title: "Talikng Head",
+      youtubeId: "rA-urGq1TbE",
     }
     // {
     //   id: 5,
